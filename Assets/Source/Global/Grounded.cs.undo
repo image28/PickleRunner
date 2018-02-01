@@ -1,0 +1,20 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class Grounded : MonoBehaviour {
+
+	// Use this for initialization
+	void Start () {
+		RaycastHit hit;
+ 		Vector3 newpos;
+		
+		if(Physics.Raycast(gameObject.transform.position, -transform.up,out hit, 1000))
+		{
+			newpos=gameObject.transform.position;
+			newpos.y=(newpos.y-hit.distance)+0.2f;
+			gameObject.transform.position=newpos;
+		}
+	}
+	
+
+}

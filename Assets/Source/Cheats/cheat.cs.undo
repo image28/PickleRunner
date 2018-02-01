@@ -1,0 +1,33 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class cheat : MonoBehaviour {
+	
+	private GameObject map;
+	
+	
+#if UNITY_STANDALONE
+	// Use this for initialization
+	void Start () {
+		map=GameObject.Find("Minimap");
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		if(Input.GetKey("k"))
+		{
+			if(Input.GetKey("l"))
+			{
+				map.SetActive(true);
+				//Debug.LogError("Showing minimap");
+			}else{
+				map.SetActive(false);
+			}
+		}else{
+			map.SetActive(false);
+		}
+			
+			
+	}
+#endif
+}
